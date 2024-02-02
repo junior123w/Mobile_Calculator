@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 <dimen name="mx_10">5dp</dimen>
+    <dimen name="bw_59">59dp</dimen>
+    <dimen name="bh_79">79dp</dimen>
 </resources>
