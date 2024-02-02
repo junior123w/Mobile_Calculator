@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<dimen name="mx_10">5dp</dimen>
-    <dimen name="bw_59">59dp</dimen>
+<dimen name="mx_12">12dp</dimen>
     <dimen name="bh_79">79dp</dimen>
+    <dimen name="bw_59">60dp</dimen>
     <dimen name="textValueSize">75sp</dimen>
     <dimen name="textValuePadding_20">20dp</dimen>
-    <dimen name="buttonTextSize"> 35sp</dimen>
+    <dimen name="buttonTextSize">25sp</dimen>
 </resources>

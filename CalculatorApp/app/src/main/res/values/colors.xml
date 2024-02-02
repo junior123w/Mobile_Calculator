@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
     <color name="equalButtonColor">#50F555</color>
+    <color name="textColor">#f3f5f0</color>
+    <color name ="backgroundColor">#383862</color>
+    <color name ="operatorButtonColor">#FAE25A</color>
+    <color name ="backSpace_ClearColor">#EA7271</color>
+    <color name ="numberButtonColor">#312F36 </color>
+    <color name ="operatorTextColor">#312F36</color>
 </resources>
