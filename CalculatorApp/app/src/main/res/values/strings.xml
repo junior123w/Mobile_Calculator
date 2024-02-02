@@ -19,4 +19,6 @@
     <string name="seven">\u0037</string>
     <string name="eight">\u0038</string>
     <string name="nine">\u0039</string>
+    <string name="textValue">0</string>
+    <string name="decimal">.</string>
 </resources>

@@ -3,4 +3,6 @@
 <dimen name="mx_10">5dp</dimen>
     <dimen name="bw_59">59dp</dimen>
     <dimen name="bh_79">79dp</dimen>
+    <dimen name="textValueSize">75sp</dimen>
+    <dimen name="buttonTextSize"> 35sp</dimen>
 </resources>
