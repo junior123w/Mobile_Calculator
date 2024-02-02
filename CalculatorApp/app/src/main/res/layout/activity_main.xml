@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#383862"
     tools:context=".MainActivity">
 
 
@@ -24,6 +25,8 @@
             android:layout_weight="1"
             android:gravity="end"
             android:text="@string/textValue"
+            android:paddingHorizontal="@dimen/textValuePadding_20"
+            android:textColor="#f3f5f0"
             android:textSize="@dimen/textValueSize" />
     </LinearLayout>
 
@@ -32,10 +35,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/secondRow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelView"
-        app:layout_constraintBottom_toTopOf="@+id/secondRow"
         tools:layout_editor_absoluteY="141dp">
 
         <Button
@@ -44,10 +47,10 @@
             android:layout_height="@dimen/bh_79"
             android:layout_marginHorizontal="@dimen/mx_10"
             android:layout_weight="1"
-            android:background="@drawable/btn_shaped_round"
+            android:background="@drawable/btn_round_shaped"
             android:fontFamily="@font/fa_solid_900"
-            android:textSize="@dimen/buttonTextSize"
-            android:text="@string/clear" />
+            android:text="@string/clear"
+            android:textSize="@dimen/buttonTextSize" />
 
         <Button
             android:id="@+id/percentageButton"
@@ -55,10 +58,10 @@
             android:layout_height="@dimen/bh_79"
             android:layout_marginHorizontal="@dimen/mx_10"
             android:layout_weight="1"
-            android:background="@drawable/btn_shaped_round"
+            android:background="@drawable/btn_round_shaped"
             android:fontFamily="@font/fa_solid_900"
-            android:textSize="@dimen/buttonTextSize"
-            android:text="@string/percentage" />
+            android:text="@string/percentage"
+            android:textSize="@dimen/buttonTextSize" />
 
 
         <Button
@@ -67,10 +70,10 @@
             android:layout_height="@dimen/bh_79"
             android:layout_marginHorizontal="@dimen/mx_10"
             android:layout_weight="1"
-            android:background="@drawable/btn_shaped_round"
+            android:background="@drawable/btn_round_shaped"
             android:fontFamily="@font/fa_solid_900"
-            android:textSize="@dimen/buttonTextSize"
-            android:text="@string/backSpace" />
+            android:text="@string/backSpace"
+            android:textSize="@dimen/buttonTextSize" />
 
         <Button
             android:id="@+id/divideButton"
@@ -78,10 +81,10 @@
             android:layout_height="@dimen/bh_79"
             android:layout_marginHorizontal="@dimen/mx_10"
             android:layout_weight="1"
-            android:background="@drawable/btn_shaped_round"
+            android:background="@drawable/btn_round_shaped"
             android:fontFamily="@font/fa_solid_900"
-            android:textSize="@dimen/buttonTextSize"
-            android:text="@string/divide" />
+            android:text="@string/divide"
+            android:textSize="@dimen/buttonTextSize" />
     </LinearLayout>
 
     <LinearLayout
@@ -89,10 +92,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/thirdRow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstRow"
-        app:layout_constraintBottom_toTopOf="@+id/thirdRow"
         tools:layout_editor_absoluteY="141dp">
 
         <Button
@@ -101,10 +104,10 @@
             android:layout_height="@dimen/bh_79"
             android:layout_marginHorizontal="@dimen/mx_10"
             android:layout_weight="1"
-            android:background="@drawable/btn_shaped_round"
+            android:background="@drawable/btn_round_shaped"
             android:fontFamily="@font/fa_solid_900"
-            android:textSize="@dimen/buttonTextSize"
-            android:text="@string/seven" />
+            android:text="@string/seven"
+            android:textSize="@dimen/buttonTextSize" />
 
         <Button
             android:id="@+id/eightButton"
@@ -112,10 +115,10 @@
             android:layout_height="@dimen/bh_79"
             android:layout_marginHorizontal="@dimen/mx_10"
             android:layout_weight="1"
-            android:background="@drawable/btn_shaped_round"
+            android:background="@drawable/btn_round_shaped"
             android:fontFamily="@font/fa_solid_900"
-            android:textSize="@dimen/buttonTextSize"
-            android:text="@string/eight" />
+            android:text="@string/eight"
+            android:textSize="@dimen/buttonTextSize" />
 
 
         <Button
@@ -124,10 +127,10 @@
             android:layout_height="@dimen/bh_79"
             android:layout_marginHorizontal="@dimen/mx_10"
             android:layout_weight="1"
-            android:background="@drawable/btn_shaped_round"
+            android:background="@drawable/btn_round_shaped"
             android:fontFamily="@font/fa_solid_900"
-            android:textSize="@dimen/buttonTextSize"
-            android:text="@string/nine" />
+            android:text="@string/nine"
+            android:textSize="@dimen/buttonTextSize" />
 
         <Button
             android:id="@+id/multiplyButton"
@@ -135,10 +138,10 @@
             android:layout_height="@dimen/bh_79"
             android:layout_marginHorizontal="@dimen/mx_10"
             android:layout_weight="1"
-            android:background="@drawable/btn_shaped_round"
+            android:background="@drawable/btn_round_shaped"
             android:fontFamily="@font/fa_solid_900"
-            android:textSize="@dimen/buttonTextSize"
-            android:text="@string/multiply" />
+            android:text="@string/multiply"
+            android:textSize="@dimen/buttonTextSize" />
     </LinearLayout>
 
     <LinearLayout
@@ -146,10 +149,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/fourthRow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/secondRow"
-        app:layout_constraintBottom_toTopOf="@+id/fourthRow"
         tools:layout_editor_absoluteY="141dp">
 
         <Button
@@ -158,10 +161,10 @@
             android:layout_height="@dimen/bh_79"
             android:layout_marginHorizontal="@dimen/mx_10"
             android:layout_weight="1"
-            android:background="@drawable/btn_shaped_round"
+            android:background="@drawable/btn_round_shaped"
             android:fontFamily="@font/fa_solid_900"
-            android:textSize="@dimen/buttonTextSize"
-            android:text="@string/four" />
+            android:text="@string/four"
+            android:textSize="@dimen/buttonTextSize" />
 
         <Button
             android:id="@+id/fiveButton"
@@ -169,10 +172,10 @@
             android:layout_height="@dimen/bh_79"
             android:layout_marginHorizontal="@dimen/mx_10"
             android:layout_weight="1"
-            android:background="@drawable/btn_shaped_round"
+            android:background="@drawable/btn_round_shaped"
             android:fontFamily="@font/fa_solid_900"
-            android:textSize="@dimen/buttonTextSize"
-            android:text="@string/five" />
+            android:text="@string/five"
+            android:textSize="@dimen/buttonTextSize" />
 
 
         <Button
@@ -181,10 +184,10 @@
             android:layout_height="@dimen/bh_79"
             android:layout_marginHorizontal="@dimen/mx_10"
             android:layout_weight="1"
-            android:background="@drawable/btn_shaped_round"
+            android:background="@drawable/btn_round_shaped"
             android:fontFamily="@font/fa_solid_900"
-            android:textSize="@dimen/buttonTextSize"
-            android:text="@string/six" />
+            android:text="@string/six"
+            android:textSize="@dimen/buttonTextSize" />
 
         <Button
             android:id="@+id/plusButton"
@@ -192,10 +195,10 @@
             android:layout_height="@dimen/bh_79"
             android:layout_marginHorizontal="@dimen/mx_10"
             android:layout_weight="1"
-            android:background="@drawable/btn_shaped_round"
+            android:background="@drawable/btn_round_shaped"
             android:fontFamily="@font/fa_solid_900"
-            android:textSize="@dimen/buttonTextSize"
-            android:text="@string/add" />
+            android:text="@string/add"
+            android:textSize="@dimen/buttonTextSize" />
     </LinearLayout>
 
     <LinearLayout
@@ -203,10 +206,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/fifthRow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/thirdRow"
-        app:layout_constraintBottom_toTopOf="@+id/fifthRow"
         tools:layout_editor_absoluteY="141dp">
 
         <Button
@@ -215,10 +218,10 @@
             android:layout_height="@dimen/bh_79"
             android:layout_marginHorizontal="@dimen/mx_10"
             android:layout_weight="1"
-            android:background="@drawable/btn_shaped_round"
+            android:background="@drawable/btn_round_shaped"
             android:fontFamily="@font/fa_solid_900"
-            android:textSize="@dimen/buttonTextSize"
-            android:text="@string/one" />
+            android:text="@string/one"
+            android:textSize="@dimen/buttonTextSize" />
 
         <Button
             android:id="@+id/twoButton"
@@ -226,10 +229,10 @@
             android:layout_height="@dimen/bh_79"
             android:layout_marginHorizontal="@dimen/mx_10"
             android:layout_weight="1"
-            android:background="@drawable/btn_shaped_round"
+            android:background="@drawable/btn_round_shaped"
             android:fontFamily="@font/fa_solid_900"
-            android:textSize="@dimen/buttonTextSize"
-            android:text="@string/two" />
+            android:text="@string/two"
+            android:textSize="@dimen/buttonTextSize" />
 
 
         <Button
@@ -238,10 +241,10 @@
             android:layout_height="@dimen/bh_79"
             android:layout_marginHorizontal="@dimen/mx_10"
             android:layout_weight="1"
-            android:background="@drawable/btn_shaped_round"
+            android:background="@drawable/btn_round_shaped"
             android:fontFamily="@font/fa_solid_900"
-            android:textSize="@dimen/buttonTextSize"
-            android:text="@string/three" />
+            android:text="@string/three"
+            android:textSize="@dimen/buttonTextSize" />
 
         <Button
             android:id="@+id/subtractButton"
@@ -249,10 +252,10 @@
             android:layout_height="@dimen/bh_79"
             android:layout_marginHorizontal="@dimen/mx_10"
             android:layout_weight="1"
-            android:background="@drawable/btn_shaped_round"
+            android:background="@drawable/btn_round_shaped"
             android:fontFamily="@font/fa_solid_900"
-            android:textSize="@dimen/buttonTextSize"
-            android:text="@string/subtract" />
+            android:text="@string/subtract"
+            android:textSize="@dimen/buttonTextSize" />
     </LinearLayout>
 
     <LinearLayout
@@ -263,7 +266,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-
         app:layout_constraintTop_toBottomOf="@+id/fourthRow">
 
         <Button
@@ -272,10 +274,10 @@
             android:layout_height="@dimen/bh_79"
             android:layout_marginHorizontal="@dimen/mx_10"
             android:layout_weight="1"
-            android:background="@drawable/btn_shaped_round"
+            android:background="@drawable/btn_round_shaped"
             android:fontFamily="@font/fa_solid_900"
-            android:textSize="@dimen/buttonTextSize"
-            android:text="@string/plusMinus" />
+            android:text="@string/plusMinus"
+            android:textSize="@dimen/buttonTextSize" />
 
         <Button
             android:id="@+id/zeroButton"
@@ -283,10 +285,10 @@
             android:layout_height="@dimen/bh_79"
             android:layout_marginHorizontal="@dimen/mx_10"
             android:layout_weight="1"
-            android:background="@drawable/btn_shaped_round"
+            android:background="@drawable/btn_round_shaped"
             android:fontFamily="@font/fa_solid_900"
-            android:textSize="@dimen/buttonTextSize"
-            android:text="@string/zero" />
+            android:text="@string/zero"
+            android:textSize="@dimen/buttonTextSize" />
 
 
         <Button
@@ -295,10 +297,10 @@
             android:layout_height="@dimen/bh_79"
             android:layout_marginHorizontal="@dimen/mx_10"
             android:layout_weight="1"
-            android:background="@drawable/btn_shaped_round"
+            android:background="@drawable/btn_round_shaped"
             android:fontFamily="@font/fa_solid_900"
-            android:textSize="@dimen/buttonTextSize"
-            android:text="@string/decimal" />
+            android:text="@string/decimal"
+            android:textSize="@dimen/buttonTextSize" />
 
         <Button
             android:id="@+id/equalButton"
@@ -306,10 +308,10 @@
             android:layout_height="@dimen/bh_79"
             android:layout_marginHorizontal="@dimen/mx_10"
             android:layout_weight="1"
-            android:background="@drawable/btn_shaped_round"
+            android:background="@drawable/btn_round_shaped"
             android:fontFamily="@font/fa_solid_900"
             android:text="@string/equal"
-            android:textSize="@dimen/buttonTextSize" />
+            android:textSize="@dimen/buttonTextSize"/>
     </LinearLayout>
 
 

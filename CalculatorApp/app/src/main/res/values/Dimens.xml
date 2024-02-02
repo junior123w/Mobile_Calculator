@@ -4,5 +4,6 @@
     <dimen name="bw_59">59dp</dimen>
     <dimen name="bh_79">79dp</dimen>
     <dimen name="textValueSize">75sp</dimen>
+    <dimen name="textValuePadding_20">20dp</dimen>
     <dimen name="buttonTextSize"> 35sp</dimen>
 </resources>
