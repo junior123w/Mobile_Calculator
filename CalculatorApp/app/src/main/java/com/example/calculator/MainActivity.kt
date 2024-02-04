@@ -9,7 +9,7 @@ import android.os.Bundle
  * Student Number:200522618
  * App Name:Calculator
  * Date: 1st Feb 2024
- * Version: v 01.*/
+ * Version: v 01.6*/
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
