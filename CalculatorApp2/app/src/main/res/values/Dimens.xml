@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<dimen name="mx_12">12dp</dimen>
+    <dimen name="bh_79">80dp</dimen>
+    <dimen name="bw_59">50dp</dimen>
+    <dimen name="p_0">0dp</dimen>
+    <dimen name="textValueSize">75sp</dimen>
+    <dimen name="textValuePadding_20">20dp</dimen>
+    <dimen name="buttonTextSize">25sp</dimen>
+    <dimen name="cornerRadius">50dp</dimen>
+</resources>
