@@ -67,32 +67,29 @@ class Calculator(binding: ActivityMainBinding) {
                 "multiply" -> {
                     this.m_lhs = multiply(this.m_lhs, this.m_resultLabelValue)
                     this.m_resultLabelValue = ""
-                    this.m_binding.calculatorText.text = this.m_lhs;
+                    this.m_binding.calculatorText.text = this.m_lhs
                 }
 
                 "divide" -> {
                     this.m_lhs = divide(this.m_lhs, this.m_resultLabelValue)
                     this.m_resultLabelValue = ""
-                    this.m_binding.calculatorText.text = this.m_lhs;
+                    this.m_binding.calculatorText.text = this.m_lhs
                 }
 
                 "add" -> {
                     this.m_lhs = add(this.m_lhs, this.m_resultLabelValue)
                     this.m_resultLabelValue = ""
-                    this.m_binding.calculatorText.text = this.m_lhs;
+                    this.m_binding.calculatorText.text = this.m_lhs
                 }
 
                 "subtract" -> {
                     this.m_lhs = subtract(this.m_lhs, this.m_resultLabelValue)
                     this.m_resultLabelValue = ""
-                    this.m_binding.calculatorText.text = this.m_lhs;
+                    this.m_binding.calculatorText.text = this.m_lhs
                 }
 
                 "equals" -> {
-                    if (m_active_operation.isNotEmpty()) {
-                        evaluateExpression()
-                        m_active_operation = ""
-                    }
+
                 }
             }
             // update the last operation
@@ -170,22 +167,13 @@ class Calculator(binding: ActivityMainBinding) {
     /**
      * This function evaluates the expression allowing the multiple operations to work eg:4+3/2-5 in the order of operations
      */
-    private fun evaluateExpression() {
-        when (m_active_operation) {
-            "multiply" -> m_lhs = multiply(m_lhs, m_resultLabelValue)
-            "divide" -> m_lhs = divide(m_lhs, m_resultLabelValue)
-            "add" -> m_lhs = add(m_lhs, m_resultLabelValue)
-            "subtract" -> m_lhs = subtract(m_lhs, m_resultLabelValue)
-        }
-        m_resultLabelValue = ""
-        m_binding.calculatorText.text = m_lhs
-    }
+
 
     /**
      * clears the calculator functionality
      * @param:clear[Unit]
      */
-    private fun clear():Unit
+    private fun clear()
     {
         this.m_resultLabelValue = ""
         this.m_lhs = ""
@@ -298,11 +286,13 @@ class Calculator(binding: ActivityMainBinding) {
             return "Error"
         }
 
-        if(LHS.contains(".") || RHS.contains("."))
-        {
-            return (LHS.toFloat() / RHS.toFloat()).toString()
+        val result = LHS.toFloat() / RHS.toFloat()
+
+        return if (result % 1 == 0.0f) {
+            result.toInt().toString()
+        } else {
+           result.toString()
         }
-        return (LHS.toInt() / RHS.toInt()).toString()
     }
 
 }
