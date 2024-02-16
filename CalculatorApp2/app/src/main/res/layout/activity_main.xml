@@ -47,6 +47,7 @@
             style="@style/CalculatorButton"
             android:layout_weight="1"
             android:backgroundTint="@color/backSpace_ClearColor"
+            android:tag="clear"
             android:text="@string/clear"
             android:textColor="@color/textColor"
             android:textSize="@dimen/buttonTextSize" />
@@ -56,6 +57,7 @@
             style="@style/CalculatorButton"
             android:layout_weight="1"
             android:backgroundTint="@color/operatorButtonColor"
+            android:tag="percent"
             android:text="@string/percentage"
             android:textColor="@color/operatorTextColor"
             android:textSize="@dimen/buttonTextSize" />
@@ -66,6 +68,7 @@
             style="@style/CalculatorButton"
             android:layout_weight="1"
             android:backgroundTint="@color/backSpace_ClearColor"
+            android:tag="backSpace"
             android:text="@string/backSpace"
             android:textColor="@color/textColor"
             android:textSize="@dimen/buttonTextSize" />
@@ -75,6 +78,7 @@
             style="@style/CalculatorButton"
             android:layout_weight="1"
             android:backgroundTint="@color/operatorButtonColor"
+            android:tag="divide"
             android:text="@string/divide"
             android:textColor="@color/operatorTextColor"
             android:textSize="@dimen/buttonTextSize" />
@@ -96,6 +100,7 @@
             style="@style/CalculatorButton"
             android:layout_weight="1"
             android:backgroundTint="@color/numberButtonColor"
+            android:tag="7"
             android:text="@string/seven"
             android:textColor="@color/textColor"
             android:textSize="@dimen/buttonTextSize" />
@@ -105,6 +110,7 @@
             style="@style/CalculatorButton"
             android:layout_weight="1"
             android:backgroundTint="@color/numberButtonColor"
+            android:tag="8"
             android:text="@string/eight"
             android:textColor="@color/textColor"
             android:textSize="@dimen/buttonTextSize" />
@@ -115,6 +121,7 @@
             style="@style/CalculatorButton"
             android:layout_weight="1"
             android:backgroundTint="@color/numberButtonColor"
+            android:tag="9"
             android:text="@string/nine"
             android:textColor="@color/textColor"
             android:textSize="@dimen/buttonTextSize" />
@@ -124,6 +131,7 @@
             style="@style/CalculatorButton"
             android:layout_weight="1"
             android:backgroundTint="@color/operatorButtonColor"
+            android:tag="multiply"
             android:text="@string/multiply"
             android:textColor="@color/operatorTextColor"
             android:textSize="@dimen/buttonTextSize" />
@@ -145,6 +153,7 @@
             style="@style/CalculatorButton"
             android:layout_weight="1"
             android:backgroundTint="@color/numberButtonColor"
+            android:tag="4"
             android:text="@string/four"
             android:textColor="@color/textColor"
             android:textSize="@dimen/buttonTextSize" />
@@ -154,6 +163,7 @@
             style="@style/CalculatorButton"
             android:layout_weight="1"
             android:backgroundTint="@color/numberButtonColor"
+            android:tag="5"
             android:text="@string/five"
             android:textColor="@color/textColor"
             android:textSize="@dimen/buttonTextSize" />
@@ -164,6 +174,7 @@
             style="@style/CalculatorButton"
             android:layout_weight="1"
             android:backgroundTint="@color/numberButtonColor"
+            android:tag="6"
             android:text="@string/six"
             android:textColor="@color/textColor"
             android:textSize="@dimen/buttonTextSize" />
@@ -173,6 +184,7 @@
             style="@style/CalculatorButton"
             android:layout_weight="1"
             android:backgroundTint="@color/operatorButtonColor"
+            android:tag="add"
             android:text="@string/add"
             android:textColor="@color/operatorTextColor"
             android:textSize="@dimen/buttonTextSize" />
@@ -194,6 +206,7 @@
             style="@style/CalculatorButton"
             android:layout_weight="1"
             android:backgroundTint="@color/numberButtonColor"
+            android:tag="1"
             android:text="@string/one"
             android:textColor="@color/textColor"
             android:textSize="@dimen/buttonTextSize" />
@@ -203,6 +216,7 @@
             style="@style/CalculatorButton"
             android:layout_weight="1"
             android:backgroundTint="@color/numberButtonColor"
+            android:tag="2"
             android:text="@string/two"
             android:textColor="@color/textColor"
             android:textSize="@dimen/buttonTextSize" />
@@ -213,6 +227,7 @@
             style="@style/CalculatorButton"
             android:layout_weight="1"
             android:backgroundTint="@color/numberButtonColor"
+            android:tag="3"
             android:text="@string/three"
             android:textColor="@color/textColor"
             android:textSize="@dimen/buttonTextSize" />
@@ -222,6 +237,7 @@
             style="@style/CalculatorButton"
             android:layout_weight="1"
             android:backgroundTint="@color/operatorButtonColor"
+            android:tag="subtract"
             android:text="@string/subtract"
             android:textColor="@color/operatorTextColor"
             android:textSize="@dimen/buttonTextSize" />
@@ -242,6 +258,7 @@
             style="@style/CalculatorButton"
             android:layout_weight="1"
             android:backgroundTint="@color/operatorButtonColor"
+            android:tag="plusMinus"
             android:text="@string/plusMinus"
             android:textColor="@color/operatorTextColor"
             android:textSize="@dimen/buttonTextSize" />
@@ -251,6 +268,7 @@
             style="@style/CalculatorButton"
             android:layout_weight="1"
             android:backgroundTint="@color/numberButtonColor"
+            android:tag="0"
             android:text="@string/zero"
             android:textColor="@color/textColor"
             android:textSize="@dimen/buttonTextSize" />
@@ -261,6 +279,7 @@
             style="@style/CalculatorButton"
             android:layout_weight="1"
             android:backgroundTint="@color/numberButtonColor"
+            android:tag="."
             android:text="@string/decimal"
             android:textColor="@color/textColor"
             android:textSize="@dimen/buttonTextSize" />
@@ -270,6 +289,7 @@
             style="@style/CalculatorButton"
             android:layout_weight="1"
             android:backgroundTint="@color/equalButtonColor"
+            android:tag="equals"
             android:text="@string/equal"
             android:textColor="@color/textColor"
             android:textSize="@dimen/buttonTextSize" />
