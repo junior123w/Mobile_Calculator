@@ -2,6 +2,7 @@ package com.example.calculator2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.calculator2.databinding.ActivityMainBinding
 
 /**
  * Name: Naimil Shah
@@ -10,8 +11,13 @@ import android.os.Bundle
  * Date: 1st Feb 2024
  * Version: v 01.6*/
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityMainBinding
+    private lateinit var calculator:Calculator
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        calculator = Calculator(binding)
     }
 }
