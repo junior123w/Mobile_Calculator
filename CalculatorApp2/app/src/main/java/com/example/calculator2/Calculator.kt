@@ -7,10 +7,14 @@ class Calculator(binding: ActivityMainBinding) {
 
     private var m_binding: ActivityMainBinding
     private var m_resultLabelValue: String
+    private var m_lhs: String
+    private var m_active_operation: String
     
     init{
         m_binding = binding
         m_resultLabelValue=""
+        this.m_lhs = ""
+        this.m_active_operation = ""
         initializeOnCLickListener()
     }
 
@@ -43,9 +47,58 @@ class Calculator(binding: ActivityMainBinding) {
     }
 
     //shared event handlers
-    private fun processOperatorButtons(view: View) {
+    private fun processOperatorButtons(view: View)
+    {
+        if(m_lhs.isEmpty() && this.m_resultLabelValue.isNotEmpty())
+        {
+            this.m_lhs = this.m_resultLabelValue
+            this.m_resultLabelValue = ""
+            this.m_active_operation = view.tag.toString()
+        }
+        else if(this.m_lhs.isNotEmpty() && this.m_resultLabelValue.isEmpty())
+        {
+            this.m_active_operation = view.tag.toString()
+        }
+        else if(this.m_lhs.isNotEmpty() && this.m_resultLabelValue.isNotEmpty())
+        {
+            // compute the result based ont the last operator selected
+
+            when(this.m_active_operation) {
+                "multiply" -> {
+                    this.m_lhs = multiply(this.m_lhs, this.m_resultLabelValue)
+                    this.m_resultLabelValue = ""
+                    this.m_binding.calculatorText.text = this.m_lhs;
+                }
+
+                "divide" -> {
+                    this.m_lhs = divide(this.m_lhs, this.m_resultLabelValue)
+                    this.m_resultLabelValue = ""
+                    this.m_binding.calculatorText.text = this.m_lhs;
+                }
+
+                "add" -> {
+                    this.m_lhs = add(this.m_lhs, this.m_resultLabelValue)
+                    this.m_resultLabelValue = ""
+                    this.m_binding.calculatorText.text = this.m_lhs;
+                }
+
+                "subtract" -> {
+                    this.m_lhs = subtract(this.m_lhs, this.m_resultLabelValue)
+                    this.m_resultLabelValue = ""
+                    this.m_binding.calculatorText.text = this.m_lhs;
+                }
+
+                "equals" -> {
+
+                }
+            }
+            // update the last operation
+            this.m_active_operation = view.tag.toString()
+        }
 
     }
+
+
 
     private fun processExtraButtons(view: View)
     {
@@ -64,8 +117,7 @@ class Calculator(binding: ActivityMainBinding) {
             }
             "clear" ->
             {
-                this.m_resultLabelValue = ""
-                this.m_binding.calculatorText.text = "0"
+                clear()
             }
             "plusMinus" ->
             {
@@ -110,6 +162,106 @@ class Calculator(binding: ActivityMainBinding) {
 
         this.m_binding.calculatorText.text = this.m_resultLabelValue
 
+    }
+
+    private fun clear():Unit
+    {
+        this.m_resultLabelValue = ""
+        this.m_lhs = ""
+        this.m_active_operation = ""
+        this.m_binding.calculatorText.text = "0"
+    }
+    private fun subtract(lhs: String, rhs: String): String
+    {
+        var LHS = lhs
+        var RHS = rhs
+
+        if(LHS.isEmpty())
+        {
+            LHS = "0"
+        }
+
+        if(RHS.isEmpty())
+        {
+            RHS = "0"
+        }
+
+        if(LHS.contains(".") || RHS.contains("."))
+        {
+            return (LHS.toFloat() - RHS.toFloat()).toString()
+        }
+        return (LHS.toInt() - RHS.toInt()).toString()
+    }
+
+    /**
+     * This function adds the lhs to the rhs and returns a string representation of the result
+     *
+     * @param lhs [String]
+     * @param rhs [String]
+     * @return [String]
+     */
+    private fun add(lhs: String, rhs: String): String
+    {
+        var LHS = lhs
+        var RHS = rhs
+
+        if(LHS.isEmpty())
+        {
+            LHS = "0"
+        }
+
+        if(RHS.isEmpty())
+        {
+            RHS = "0"
+        }
+
+        if(LHS.contains(".") || RHS.contains("."))
+        {
+            return (LHS.toFloat() + RHS.toFloat()).toString()
+        }
+        return (LHS.toInt() + RHS.toInt()).toString()
+    }
+
+    private fun multiply(lhs: String, rhs: String): String {
+        var LHS = lhs
+        var RHS = rhs
+
+        if(LHS.isEmpty())
+        {
+            LHS = "0"
+        }
+
+        if(RHS.isEmpty())
+        {
+            RHS = "0"
+        }
+
+        if(LHS.contains(".") || RHS.contains("."))
+        {
+            return (LHS.toFloat() * RHS.toFloat()).toString()
+        }
+        return (LHS.toInt() * RHS.toInt()).toString()
+    }
+
+    private fun divide(lhs: String, rhs: String): String {
+        var LHS = lhs
+        var RHS = rhs
+
+        if(LHS.isEmpty())
+        {
+            LHS = "0"
+        }
+
+        if(RHS.isEmpty())
+        {
+            RHS = "0"
+        }
+
+        if(LHS.contains(".") || RHS.contains("."))
+        {
+            return (LHS.toFloat() / RHS.toFloat()).toString()
+        }
+        return (LHS.toInt() / RHS.toInt()).toString()
     }
 
 }
