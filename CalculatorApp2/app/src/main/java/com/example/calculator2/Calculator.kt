@@ -89,7 +89,10 @@ class Calculator(binding: ActivityMainBinding) {
                 }
 
                 "equals" -> {
-
+                    if (m_active_operation.isNotEmpty()) {
+                        evaluateExpression()
+                        m_active_operation = ""
+                    }
                 }
             }
             // update the last operation
@@ -164,6 +167,24 @@ class Calculator(binding: ActivityMainBinding) {
 
     }
 
+    /**
+     * This function evaluates the expression allowing the multiple operations to work eg:4+3/2-5 in the order of operations
+     */
+    private fun evaluateExpression() {
+        when (m_active_operation) {
+            "multiply" -> m_lhs = multiply(m_lhs, m_resultLabelValue)
+            "divide" -> m_lhs = divide(m_lhs, m_resultLabelValue)
+            "add" -> m_lhs = add(m_lhs, m_resultLabelValue)
+            "subtract" -> m_lhs = subtract(m_lhs, m_resultLabelValue)
+        }
+        m_resultLabelValue = ""
+        m_binding.calculatorText.text = m_lhs
+    }
+
+    /**
+     * clears the calculator functionality
+     * @param:clear[Unit]
+     */
     private fun clear():Unit
     {
         this.m_resultLabelValue = ""
@@ -171,6 +192,14 @@ class Calculator(binding: ActivityMainBinding) {
         this.m_active_operation = ""
         this.m_binding.calculatorText.text = "0"
     }
+
+    /**
+     * This function subtracts the rhs to the lhs and returns a string representation of the result
+     *
+     * @param lhs [String]
+     * @param rhs [String]
+     * @return [String]
+     */
     private fun subtract(lhs: String, rhs: String): String
     {
         var LHS = lhs
@@ -222,6 +251,12 @@ class Calculator(binding: ActivityMainBinding) {
         return (LHS.toInt() + RHS.toInt()).toString()
     }
 
+    /**
+     * This function multiplies the lhs to the rhs and returns a string representation of the result
+     * @param lhs [String]
+     * @param rhs [String]
+     * @return [String]
+     */
     private fun multiply(lhs: String, rhs: String): String {
         var LHS = lhs
         var RHS = rhs
@@ -243,6 +278,12 @@ class Calculator(binding: ActivityMainBinding) {
         return (LHS.toInt() * RHS.toInt()).toString()
     }
 
+    /**
+     * This function divides the lhs to the rhs and returns a string representation of the result
+     * @param lhs [String]
+     * @param rhs [String]
+     * @return [String]
+     */
     private fun divide(lhs: String, rhs: String): String {
         var LHS = lhs
         var RHS = rhs
@@ -252,9 +293,9 @@ class Calculator(binding: ActivityMainBinding) {
             LHS = "0"
         }
 
-        if(RHS.isEmpty())
+        if(RHS.isEmpty() || RHS.contains("0"))
         {
-            RHS = "0"
+            return "Error"
         }
 
         if(LHS.contains(".") || RHS.contains("."))
