@@ -9,21 +9,28 @@ class Calculator(binding: ActivityMainBinding) {
     private var m_resultLabelValue: String
     private var m_lhs: String
     private var m_active_operation: String
-    
+
+
+
+
     init{
         m_binding = binding
         m_resultLabelValue=""
         this.m_lhs = ""
         this.m_active_operation = ""
+
         initializeOnCLickListener()
     }
 
+
+
     private fun initializeOnCLickListener() {
+
         //operator buttons
         this.m_binding.divideButton.setOnClickListener { view -> processOperatorButtons(view) }
         this.m_binding.plusButton.setOnClickListener { view -> processOperatorButtons(view) }
         this.m_binding.subtractButton.setOnClickListener { view -> processOperatorButtons(view) }
-        this.m_binding.equalButton.setOnClickListener { view -> processOperatorButtons(view) }
+        this.m_binding.equalButton.setOnClickListener { view->processOperatorButtons(view)}
         this.m_binding.multiplyButton.setOnClickListener { view -> processOperatorButtons(view) }
 
         //extra buttons
@@ -92,50 +99,53 @@ class Calculator(binding: ActivityMainBinding) {
 
                 }
             }
+
             // update the last operation
             this.m_active_operation = view.tag.toString()
+
         }
 
     }
 
 
 
-    private fun processExtraButtons(view: View)
-    {
-        when(view.tag.toString())
-        {
-            "backSpace" ->
-            {
+    private fun processExtraButtons(view: View) {
+        when (view.tag.toString()) {
+            "backSpace" -> {
 
                 this.m_resultLabelValue = this.m_resultLabelValue.dropLast(1)
                 this.m_binding.calculatorText.text = this.m_resultLabelValue
-                if(this.m_resultLabelValue.isEmpty() || this.m_resultLabelValue == "-")
-                {
+                if (this.m_resultLabelValue.isEmpty() || this.m_resultLabelValue == "-") {
                     this.m_resultLabelValue = ""
                     this.m_binding.calculatorText.text = "0"
                 }
             }
-            "clear" ->
-            {
+
+            "clear" -> {
                 clear()
             }
-            "plusMinus" ->
-            {
-                if(this.m_resultLabelValue.isNotEmpty())
-                {
-                    if(this.m_resultLabelValue.contains("-"))
-                    {
+
+            "plusMinus" -> {
+                if (this.m_resultLabelValue.isNotEmpty()) {
+                    if (this.m_resultLabelValue.contains("-")) {
                         this.m_resultLabelValue = this.m_resultLabelValue.removePrefix("-")
-                    }
-                    else
-                    {
+                    } else {
                         this.m_resultLabelValue = "-" + this.m_resultLabelValue
                     }
                     this.m_binding.calculatorText.text = this.m_resultLabelValue
                 }
             }
-        }
 
+            "percent" -> {
+                if (this.m_lhs.isNotEmpty() && this.m_resultLabelValue.isNotEmpty()) {
+                    val currentValue = this.m_resultLabelValue.toFloat()
+                    val percentageValue = this.m_lhs.toFloat() * (currentValue / 100.0)
+                    this.m_resultLabelValue = percentageValue.toString()
+                    this.m_binding.calculatorText.text = this.m_resultLabelValue
+                }
+            }
+
+        }
     }
 
     private fun processNumberButtons(view: View)
@@ -291,8 +301,10 @@ class Calculator(binding: ActivityMainBinding) {
         return if (result % 1 == 0.0f) {
             result.toInt().toString()
         } else {
-           result.toString()
+            String.format("%.8f", result).removeSuffix("0").removeSuffix(".")
         }
     }
+
+
 
 }
